@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppJogoDaVelha.MainPage"
+             BackgroundColor="#013A49">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="#013A49" />
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center">
+            <Label Text="Jogo da Velha" FontSize="36" />
+            <Label x:Name="lblVez" Text="Vez do jogador: X" />
+
+            <Grid x:Name="GameGrid"
+                  RowSpacing="5"
+                  ColumnSpacing="5"
+                  WidthRequest="300"
+                  HeightRequest="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btn10" Grid.Row="0" Grid.Column="0" Clicked="Button_Clicked"/>
+                <Button x:Name="btn11" Grid.Row="0" Grid.Column="1" Clicked="Button_Clicked"/>
+                <Button x:Name="btn12" Grid.Row="0" Grid.Column="2" Clicked="Button_Clicked"/>
+
+                <Button x:Name="btn20" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked"/>
+                <Button x:Name="btn21" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked"/>
+                <Button x:Name="btn22" Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked"/>
+
+                <Button x:Name="btn30" Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked"/>
+                <Button x:Name="btn31" Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked"/>
+                <Button x:Name="btn32" Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked"/>
+            </Grid>
+
+            <Button Text="Reiniciar"
+                    Clicked="Reiniciar_Clicked"
+                    BackgroundColor="White"
+                    TextColor="#013A49"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
